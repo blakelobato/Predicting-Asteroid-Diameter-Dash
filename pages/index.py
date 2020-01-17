@@ -16,17 +16,21 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## Why Predict Asteroids' Diameters?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
+            
+            This education app will help categorize potential threats to the planet as well as expand our knowledge of outer space. Big asteroids leave even bigger destruction so prepartion and accuracy is key.
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            ✅ Asteroid Diameter Predictor is a prediction app that uses orbital parameters of an asteroid to accurately predict it's diameter (in kilometers) and compare those results to the actual diameter recorded.
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            ✅ Asteroid Diameter Predictor has shown success in asteroid prediction. It can be implemented or scaled for comets, planets, and other objects in space for future applicaation and analysis.
+
+            ✅ At the time of it's inception, Asteroid Diameter Predictor is the only intelligent prediction app that uses sophisticated machine learning algorithms to make statistical approximations on asteroids' diameters. 
 
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Start Predicting!', color='primary'), href='/predictions')
     ],
     md=4,
 )
