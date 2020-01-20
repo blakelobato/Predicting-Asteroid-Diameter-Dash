@@ -20,7 +20,7 @@ column1 = dbc.Col(
             
             dcc.Mardkwon("""
             ## Step 1. Find the Data: 
-            This proved to be somewhat difficult when there are not a great deal of clean, accessible datasets out there. This is especially true when dealing with space related content. The best place to find data relating to asteroids or comets can be found at ! [JPL SSD Query](https://ssd.jpl.nasa.gov/sbdb_query.cgi#x). 
+            This proved to be somewhat difficult when there are not a great deal of clean, accessible datasets out there. This is especially true when dealing with space related content. The best place to find data relating to asteroids or comets can be found at [JPL SSD Query](https://ssd.jpl.nasa.gov/sbdb_query.cgi#x). 
             """),
 
             dcc.Markdown("""
