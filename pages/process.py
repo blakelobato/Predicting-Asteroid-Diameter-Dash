@@ -12,11 +12,12 @@ from app import app
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        dcc.Markdown("""
-            ### Process
-
-            The process behind setting up Asteroid Diameter Predictor can be broken up into the following tasks: Begin with finding useable data, run a pandas profiling report on the data to garner insight on the variables, clean the data that is not useful for the project, and finally eliminate outliers in the target variable for concise results. Once the data cleaning process is complete the implementation of machine learning models were applied to the data in order to generate statistically backed predictions to real world data. 
-            """),
+        layout = [dcc.Markdown("""
+        
+            ### Process 
+            The process behind setting up Asteroid Diameter Predictor can be broken up into the following tasks: Begin with finding useable data, run a pandas profiling report on the data to garner insight on the variables, clean the data that is not useful for the project, and finally eliminate outliers in the target variable for concise results. Once the data cleaning process is complete the implementation of machine learning models were applied to the data in order to generate statistically backed predictions to real world data.
+            """), 
+      
             
             dcc.Mardkwon("""
             ## Step 1. Find the Data: 
@@ -45,6 +46,7 @@ column1 = dbc.Col(
             html.Img(src='/Images/before-dist-diameter.png', style={'width':'100%'}),
             html.Img(src='/Images/after-dist-diameter.png', style={'width':'100%'}),
 
+        ]
     ]
 )
 
