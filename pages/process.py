@@ -42,7 +42,7 @@ column1 = dbc.Col(
 
             dcc.Markdown("""
             Step 4. Outlier Elimination: This step is somewhat self-explanatory. The profiling report showed that the target variable was crazy skewed. Using the IQR I was able to get a much cleaner distribution of 'diameter' so that the target data was as concise as possible. There are before and after pictures shown below.
-            """).
+            """),
             html.Img(src='/Images/before-dist-diameter.png', style={'width':'100%'}),
             html.Img(src='/Images/after-dist0diameter.png', style={'width':'100%'}),
 
