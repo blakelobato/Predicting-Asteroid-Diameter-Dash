@@ -11,7 +11,9 @@ from app import app
 # 1 column layout
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 
-layout = [dcc.Markdown("""
+column1 = dbc.Col(
+    [
+        dcc.Markdown("""
         
     ### Process 
 
@@ -50,7 +52,9 @@ layout = [dcc.Markdown("""
     html.Img(src='/Images/before-dist-diameter.png', style={'width':'100%'}),
     html.Img(src='/Images/after-dist-diameter.png', style={'width':'100%'}),
 
-        
-]
+],
+)
 
-#layout = dbc.Row([column1])
+
+layout = dbc.Row([column1])
+#updated 1:52 pm 1/20
