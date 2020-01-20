@@ -12,9 +12,7 @@ from app import app
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        dcc.Markdown(
-            """
-        
+        dcc.Markdown("""
             ### Process
 
             The process behind setting up Asteroid Diameter Predictor can be broken up into the following tasks: Begin with finding useable data, run a pandas profiling report on the data to garner insight on the variables, clean the data that is not useful for the project, and finally eliminate outliers in the target variable for concise results. Once the data cleaning process is complete the implementation of machine learning models were applied to the data in order to generate statistically backed predictions to real world data. 
@@ -27,7 +25,7 @@ column1 = dbc.Col(
 
             dcc.Markdown("""
             ## Step 2. Run Pandas Profiling Report: 
-            This may be a frivolous and time consuming process (my report gook 18 hours to execute), however, it gives incredible insight on the data being used. The pictures below help show the different utilities and information  generated from the report.
+            This may be a frivolous and time consuming process (my report gook 18 hours to execute), however, it gives incredible insight on the data being used. The pictures below help show the different utilities and information generated from the report.
             """),
 
             html.Img(src='/Images/pandas-profile.png', style={'width':'100%'}),
@@ -41,19 +39,13 @@ column1 = dbc.Col(
             """),
 
             dcc.Markdown("""
-            Step 4. Outlier Elimination: This step is somewhat self-explanatory. The profiling report showed that the target variable was crazy skewed. Using the IQR I was able to get a much cleaner distribution of 'diameter' so that the target data was as concise as possible. There are before and after pictures shown below.
+            ## Step 4. Outlier Elimination: 
+            This step is somewhat self-explanatory. The profiling report showed that the target variable was crazy skewed. Using the IQR I was able to get a much cleaner distribution of 'diameter' so that the target data was as concise as possible. There are before and after pictures shown below.
             """),
             html.Img(src='/Images/before-dist-diameter.png', style={'width':'100%'}),
             html.Img(src='/Images/after-dist0diameter.png', style={'width':'100%'}),
 
-
-
-           
-
-    
-    
-
-    ],
+    ]
 )
 
 layout = dbc.Row([column1])
