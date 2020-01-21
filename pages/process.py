@@ -19,7 +19,7 @@ column1 = dbc.Col(
             The steps behind setting up Asteroid Diameter Predictor can be broken up into the following tasks: Begin with finding useable data, run a pandas profiling report on the data to garner insight on the variables, clean the data that is not useful for the project, and lastly eliminate outliers in the target variable for concise results. That completes the data cleaning process. Next, implementation of machine learning models were applied to the data in order to generate statistically backed predictions to real world data. Finally, results and accuracy were tested on the different models to find the best predictions.
     
             ### Step 1. Find the Data: 
-            This proved to be somewhat difficult when there are not a great deal of clean, accessible datasets out there. This is especially true when dealing with space related content. The best place to find data relating to asteroids or comets can be found at [JPL SSD Query](https://ssd.jpl.nasa.gov/sbdb_query.cgi#x). 
+            This proved to be somewhat difficult when there are not a great deal of clean, accessible datasets out there. This is especially true when dealing with space related content. The best place to find data relating to asteroids or comets can be found at JPL SSD Query(https://ssd.jpl.nasa.gov/sbdb_query.cgi#x). 
 
     
             ### Step 2. Run Pandas Profiling Report: 
