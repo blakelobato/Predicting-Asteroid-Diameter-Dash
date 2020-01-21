@@ -18,7 +18,7 @@ column1 = dbc.Col(
         
             ## Why Predict Asteroids' Diameters?
 
-            ! [INCOMING!!!](https://www.express.co.uk/news/science/1228439/Asteroid-alert-NASA-tracks-swarm-asteroids-Earth-close-approach-asteroid-news)
+            html.Img(src='assets/asteroid-fly-by-earth-01.jpg', className='img-fluid')
 
             There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
             
@@ -34,7 +34,7 @@ column1 = dbc.Col(
         ),
         dcc.Link(dbc.Button('Start Predicting!', color='primary'), href='/predictions')
     ],
-    md=4,
+    #md=4,
 )
 
 # gapminder = px.data.gapminder()
@@ -47,4 +47,4 @@ column1 = dbc.Col(
 #     ]
 # )
 
-layout = dbc.Row([column1]) #column2])
+layout = dbc.Row([column1]) 
