@@ -31,13 +31,9 @@ column1 = dbc.Col(
     md=4,
 )
 
-# gapminder = px.data.gapminder()
-# fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-#            hover_name="country", log_x=True, size_max=60)
-
- column2 = dbc.Col(
-     [
-     dcc.Markdown(
+column2 = dbc.Col(
+    [
+        dcc.Markdown(
          """
 
 
@@ -52,9 +48,10 @@ column1 = dbc.Col(
         The red color is associated with increasing the model predictions as opposed to those in the blue color, which lower the model’s prediction.
 
     
-            """),
-     ],
-     md=4,
- )
+            """
+        ),
+    ],
+     
+)
 
 layout = dbc.Row([column1, column2])
