@@ -18,7 +18,7 @@ column1 = dbc.Col(
         
             ## Why Predict Asteroids' Diameters?
 
-            html.Img(src='assets/asteroid-fly-by-earth-01.jpg', className='img-fluid')
+            html.Img(src='assets/asteroid-fly-by-earth-01.jpg', style={'width':'100%'})
 
             There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
             
