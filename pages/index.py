@@ -17,9 +17,10 @@ column1 = dbc.Col(
             """
         
             ## Why Predict Asteroids' Diameters?
+            """
 
             html.Img(src='assets/asteroid-fly-by-earth-01.jpg', style={'width':'100%'})
-
+            """
             There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
             
             This education app will help categorize potential threats to the planet as well as expand our knowledge of outer space. Big asteroids leave even bigger destruction so prepartion and accuracy is key.
