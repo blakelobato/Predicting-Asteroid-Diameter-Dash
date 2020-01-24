@@ -108,7 +108,7 @@ column2 = dbc.Col(
             value = 'Kastalia', 
             className='mb-5', 
         ), 
-    ]
+    ],
 )
 
 #### Want to have shapely plot here
@@ -118,14 +118,14 @@ column3 = dbc.Col(
         html.Div(id='prediction-content', className='lead'),
         #html.Button('Explain Prediction', id='explain-btn'),
         #html.Div([html.Img(id='shap-img', height=200, width=1000)])
-    ]
+    ],
 )
 
 layout = html.Div(
     [
         dbc.Row([column1, column2]),
         dbc.Row(column3)
-    ]
+    ],
 )
 
 
