@@ -42,7 +42,7 @@ column2 = dbc.Col(
         The Shapely plots are super useful and a great visual aid in understanding how a model makes predictions. The summary plot in the Shapely library gives an overview of the most impactful features on the model outputs.
         """
 
-        html.Img(src='assets/shapely-summary', style={'width':'100%'}
+        html.Img(src='assets/shapely-summary.png', style={'width':'100%'}
         
         """
         The red color is associated with increasing the model predictions as opposed to those in the blue color, which lower the model’s prediction.
