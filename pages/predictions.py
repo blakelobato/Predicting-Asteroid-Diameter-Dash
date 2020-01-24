@@ -12,6 +12,9 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
+import numpy
+from numpy import arange
+
 
 # Imports from this application
 from app import app
@@ -55,7 +58,7 @@ column1 = dbc.Col(
             max=1, 
             step=.1, 
             value=.10, 
-            marks={n: str(n) for n in range(0,1,.10)}, 
+            marks={n: str(n) for n in arange(0,1,.10)}, 
             className='mb-5', 
         ), 
 
