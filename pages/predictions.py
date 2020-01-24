@@ -93,7 +93,7 @@ column2 = dbc.Col(
                 {'label': 'Bruna', 'value': '290 Bruna'}, 
                 {'label': 'Phaetusa', 'value': '296 Phaetusa'}, 
                 {'label': 'Constantia', 'value': '315 Constantia'}, 
-                {'label': 'Adalberta', 'value': '330 Adalberta (A910 CB)'}
+                {'label': 'Adalberta', 'value': '330 Adalberta (A910 CB)'},
                 {'label': 'Hungaria', 'value': '434 Hungaria (1898 DR)'}, 
                 {'label': 'Adelaide', 'value': '525 Adelaide (1908 EKa)'}, 
                 {'label': 'Kundry', 'value': '553 Kundry (1904 PP)'}, 
