@@ -105,7 +105,7 @@ column2 = dbc.Col(
                 {'label': 'Josefa', 'value': '649 Josefa (1907 AF)'}, 
                 {'label': 'Noemi', 'value': '703 Noemi (1910 KT)'}, 
             ], 
-            value = 'MBA', 
+            value = 'Kastalia', 
             className='mb-5', 
         ), 
     ]
