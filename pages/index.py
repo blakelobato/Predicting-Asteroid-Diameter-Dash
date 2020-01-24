@@ -18,8 +18,11 @@ column1 = dbc.Col(
         
             ## Why Predict Asteroids' Diameters?
             """
+                    ),
 
-            html.Img(src='assets/asteroid-fly-by-earth-01.jpg', style={'width':'100%'})
+        html.Img(src='assets/asteroid-fly-by-earth-01.jpg', style={'width':'100%'}),
+
+        dcc.Markdown(    
             """
             There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
             
@@ -32,7 +35,7 @@ column1 = dbc.Col(
             ✅ At the time of it's inception, Asteroid Diameter Predictor is the only intelligent prediction app that uses sophisticated machine learning algorithms to make statistical approximations on asteroids' diameters. 
 
             """
-        ),
+                    ),
         dcc.Link(dbc.Button('Start Predicting!', color='primary'), href='/predictions')
     ],
     #md=4,
