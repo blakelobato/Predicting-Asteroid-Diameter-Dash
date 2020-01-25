@@ -14,7 +14,7 @@ from io import BytesIO
 import base64
 import numpy
 from numpy import arange
-
+import numpy as np
 
 # Imports from this application
 from app import app
@@ -28,55 +28,58 @@ df = pd.read_csv('assets/top_asteroids.csv') #this will be exported ten asteroid
 column1 = dbc.Col(
     [
 
-         dcc.Markdown(
-            """
-        
-            ## Predictions
-
-            Instructions: Pick  from the list of Asteroid's. User's can edit the following parameters: 'Number of Observations Used', 'Albedo', and 'Orbit Classification' to generate results as well. This will compare and contrast model to the actual diameter of the asteroids in question. Enjoy!
+         dcc.Markdown(""" 
+         ### Instructions: 
+            This predictor will use the information associated with a particular asteroid selected from the drop down menu on the right. However, in an effort to make the app more interactive to the user, one can edit the following parameters: 'Number of Observations Used', 'Albedo', and 'Orbit Classification'. This will override the values for the given asteroid and generate a new prediction, but be careful this could totally throw off the accuracy of the prediction!! After selecting your inputs and asteroid, you will see the predicted diameter value  versus the actual diameter of the asteroid in question with the given parameters. These will be accompanied by a shapely plot to give a rundown on why the diameter was predicted to be that specific size. Hope you enjoy and have fun!
 
             """
         ),
 
 
-        dcc.Markdown('## Predictions', className='mb-5'), 
+        dcc.Markdown('## User Inputs', className='mb-5'), 
         dcc.Markdown('#### Number of Observations Used'), 
         dcc.Slider(
             id='n_obs_used', 
-            min=5, 
-            max=4605, 
-            step=50, 
+            min=100, 
+            max=1500, 
+            step=100, 
             value=605, #when someone selects asteroid what will happen with slider update?
-            marks={n: str(n) for n in range(100,4600,250)}, 
+            marks={n: str(n) for n in range(100,1500,100)}, 
             className='mb-5', 
         ), 
 
-        dcc.Markdown('#### Albedo (Proportion of the Light Reflected off Asteroid.)'), 
+        dcc.Markdown('#### Albedo (Proportion of the Light Reflected off Asteroid)'), 
         dcc.Slider(
             id='albedo', 
             min=0, 
             max=1, 
-            step=.1, 
+            step=.10, 
             value=.10, 
-            marks={n: str(n) for n in arange(0,1,.10)}, 
+            marks={n: str(n) for n in np.linspace(0,1,num=9)}, 
             className='mb-5', 
         ), 
 
-        dcc.Markdown('#### Orbit Classification'), 
+        dcc.Markdown('''
+        ### Orbit Classification 
+        For more info on orbit classifications use this link:
+        [Click Here](https://pdssbn.astro.umd.edu/data_other/objclass.shtml)
+        '''), 
+
+
         dcc.Dropdown(
             id='classes', 
             options = [
-                {'label': 'MBA', 'value': 'MBA'}, #mba write out for label
-                {'label': 'IMB', 'value': 'IMB'}, 
-                {'label': 'MCA', 'value': 'MCA'}, 
-                {'label': 'APO', 'value': 'APO'}, 
-                {'label': 'ATE', 'value': 'ATE'}, 
-                {'label': 'OMB', 'value': 'OMB'}, 
-                {'label': 'AMO', 'value': 'AMO'}, 
-                {'label': 'TJN', 'value': 'TJN'}, 
-                {'label': 'CEN', 'value': 'CEN'}, 
-                {'label': 'AST', 'value': 'AST'}, 
-                {'label': 'TNO', 'value': 'TNO'}, 
+                {'label': 'Main Belt Asteroid', 'value': 'MBA'}, #mba write out for label
+                {'label': 'Inner Main-Belt Asteroid', 'value': 'IMB'}, 
+                {'label': 'Mars-Crossing Asteroid', 'value': 'MCA'}, 
+                {'label': 'Apollo', 'value': 'APO'}, 
+                {'label': 'Aten', 'value': 'ATE'}, 
+                {'label': 'Outer Main-Belt Asteroid', 'value': 'OMB'}, 
+                {'label': 'Amor', 'value': 'AMO'}, 
+                {'label': 'Jupiter Trojan', 'value': 'TJN'}, 
+                {'label': 'Centaur', 'value': 'CEN'}, 
+                {'label': 'Asteroid (no matches)', 'value': 'AST'}, 
+                {'label': 'TransNeptunian Object', 'value': 'TNO'}, 
             ], 
             value = 'MBA', 
             className='mb-5', 
@@ -111,6 +114,9 @@ column2 = dbc.Col(
             value = 'Kastalia', 
             className='mb-5', 
         ), 
+
+        #html.Img(src='assets/galaxy.jpg', style={'width':'100%'}),
+
     ],
 )
 

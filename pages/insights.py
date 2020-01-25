@@ -18,7 +18,7 @@ column1 = dbc.Col(
 
             ### Feature Importance Table
 
-            The feature importance table is shown below created via the Eli5 library. These correspond to how important each feature is to the prediction of the asteroid's diameter.
+            The feature importance table is shown below. This was created via the help of the Eli5 library. These correspond to how important each feature is to the prediction of the asteroid's diameter. Be weary, just because the feature is of higher important does not mean it necessarily increases the predicition, it simply means this value greatly impacts the overall diameter prediction.
 
             """     ),
 
@@ -46,7 +46,7 @@ column2 = dbc.Col(
 
 
         dcc.Markdown("""
-        PDP plots are a great tool for visualizing the impact a feature has on the desired target variable as that feature is increased in value. Some variables produce negative sloping PDP plots like albedo above, resulting in a decrease to the predicted size in diameter. This is interesting to note becuase the higher the albedo means the higher proportion of light reflected through. Thus higher levels of light means the asteroid itself is smaller, which intuitvely makes sense. 
+        PDP plots are a great tool for visualizing the impact a feature has on the desired target variable as that feature is increased in value. Some variables produce negative sloping PDP plots like albedo above, resulting in a decrease to the predicted size in diameter. This is interesting to note becuase the higher the albedo means the higher proportion of light reflected through. Based on the plot higher levels of albedo means the asteroid itself is smaller, which intuitively makes sense because it is allowing more light reflection through.
         
         """),
     ],

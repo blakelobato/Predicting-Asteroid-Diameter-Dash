@@ -24,6 +24,10 @@ column1 = dbc.Col(
 
         dcc.Markdown(    
             """
+            "If Earth gets hit by an asteroid, it’s game over. It’s control-alt-delete for civilization" —- Bill Nye the Science Guy \
+                \
+
+
             There has been heightened interest into predicting asteroid diameters due to the potential damage if these objects are to impact Earth. 
             
             This education app will help categorize potential threats to the planet as well as expand our knowledge of outer space. Big asteroids leave even bigger destruction so prepartion and accuracy is key.
