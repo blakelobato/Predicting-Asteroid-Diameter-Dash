@@ -169,6 +169,7 @@ def predict(n_obs_used, albedo, classes, asteroids):
     pred_df = df[df.full_name == asteroids]
 
     if n_obs_used != 605:
+        #pred_df['n_obs_used'].update(df['n_obs_used']) blakes idea on how to fix
         pred_df = pred_df.iloc[:,'n_obs_used'] = n_obs_used #google how to overwrite single value in df
     if albedo != .10:
         pred_df = pred_df.iloc[:,'albedo'] = albedo
