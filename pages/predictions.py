@@ -95,21 +95,21 @@ column2 = dbc.Col(
         dcc.Dropdown(
             id='asteroid', 
             options = [
-                {'label': 'Agathe', 'value': '228 Agathe'}, 
-                {'label': 'Bruna', 'value': '290 Bruna'}, 
-                {'label': 'Phaetusa', 'value': '296 Phaetusa'}, 
-                {'label': 'Constantia', 'value': '315 Constantia'}, 
-                {'label': 'Adalberta', 'value': '330 Adalberta (A910 CB)'},
-                {'label': 'Hungaria', 'value': '434 Hungaria (1898 DR)'}, 
-                {'label': 'Adelaide', 'value': '525 Adelaide (1908 EKa)'}, 
-                {'label': 'Kundry', 'value': '553 Kundry (1904 PP)'}, 
-                {'label': 'Reginhild', 'value': '574 Reginhild (1905 RD)'}, 
-                {'label': 'Mireille', 'value': '594 Mireille (1906 TW)'}, 
-                {'label': 'Agnes', 'value': '641 Agnes (1907 ZX)'}, 
-                {'label': 'Kastalia', 'value': '646 Kastalia (1907 AC)'}, 
-                {'label': 'Adelgunde', 'value': '647 Adelgunde (1907 AD)'}, 
-                {'label': 'Josefa', 'value': '649 Josefa (1907 AF)'}, 
-                {'label': 'Noemi', 'value': '703 Noemi (1910 KT)'}, 
+                {'label': 'Agathe', 'value': '   228 Agathe'}, 
+                {'label': 'Bruna', 'value': '   290 Bruna'}, 
+                {'label': 'Phaetusa', 'value': '   296 Phaetusa'}, 
+                {'label': 'Constantia', 'value': '   315 Constantia'}, 
+                {'label': 'Adalberta', 'value': '   330 Adalberta (A910 CB)'},
+                {'label': 'Hungaria', 'value': '   434 Hungaria (1898 DR)'}, 
+                {'label': 'Adelaide', 'value': '   525 Adelaide (1908 EKa)'}, 
+                {'label': 'Kundry', 'value': '   553 Kundry (1904 PP)'}, 
+                {'label': 'Reginhild', 'value': '   574 Reginhild (1905 RD)'}, 
+                {'label': 'Mireille', 'value': '   594 Mireille (1906 TW)'}, 
+                {'label': 'Agnes', 'value': '   641 Agnes (1907 ZX)'}, 
+                {'label': 'Kastalia', 'value': '   646 Kastalia (1907 AC)'}, 
+                {'label': 'Adelgunde', 'value': '   647 Adelgunde (1907 AD)'}, 
+                {'label': 'Josefa', 'value': '   649 Josefa (1907 AF)'}, 
+                {'label': 'Noemi', 'value': '   703 Noemi (1910 KT)'}, 
             ], 
             value = 'Kastalia', 
             className='mb-5', 
@@ -156,7 +156,7 @@ def fig_to_uri(in_fig, close_all=True, **save_args):
     return "data:image/png;base64,{}".format(encoded)
 
 @app.callback(
-    Output('prediction-content', 'diameter'),
+    Output('prediction-content', 'children'),
     [Input('n_obs_used', 'value'), 
      Input('albedo', 'value'),
      Input('classes', 'value'),
@@ -172,16 +172,14 @@ def predict(n_obs_used, albedo, classes, asteroids):
        'albedo', 'diameter_sigma', 'first_year_obs', 'first_month_obs',
        'last_obs_year', 'last_obs_month']]
 
-    if n_obs_used != 605:
-        #pred_df['n_obs_used'].update(df['n_obs_used']) blakes idea on how to fix
-        pred_df = pred_df.iloc[:,'n_obs_used'] = n_obs_used #google how to overwrite single value in df
-    if albedo != .10:
-        pred_df = pred_df.iloc[:,'albedo'] = albedo
-    if classes != 'MBA':
-        pred_df = pred_df.iloc[:,'classes'] = classes #change class in df to classes b4 train model in pipelin
-    
+    if pred_df.n_obs_used.values[0] != 605:
+        pred_df.at[int(pred_df.index.values[0]), 'n_obs_used'] = n_obs_used
+    if pred_df.albedo.values[0] != .10:
+        pred_df.at[int(pred_df.index.values[0]), 'albedo'] = albedo
+    if pred_df.classes.values[0] != 'MBA':
+        pred_df.at[int(pred_df.index.values[0]), 'classes'] = classes
     y_pred = pipeline.predict(pred_df)[0]
-    return f'{y_pred:.4f} km'
+    return (f'{y_pred:.4f} km')
     
 
 # SHAP INPUT UNCOMMENT ONCE DONE GETTING RUN

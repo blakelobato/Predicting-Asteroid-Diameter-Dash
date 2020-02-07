@@ -77,4 +77,4 @@ def display_page(pathname):
 
 # Run app server: https://dash.plot.ly/getting-started
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False) #### when not in debug mode need this faalse when we deploy.
