@@ -167,6 +167,10 @@ def predict(n_obs_used, albedo, classes, asteroids):
 
     #conver input to dataframe
     pred_df = df[df.full_name == asteroids]
+    pred_df = pred_df[['orbit_id', 'e', 'a', 'i', 'om', 'w', 'ma', 'n', 'tp', 'moid',
+       'moid_jup', 'classes', 'producer', 'data_arc', 'n_obs_used', 'rms',
+       'albedo', 'diameter_sigma', 'first_year_obs', 'first_month_obs',
+       'last_obs_year', 'last_obs_month']]
 
     if n_obs_used != 605:
         #pred_df['n_obs_used'].update(df['n_obs_used']) blakes idea on how to fix
