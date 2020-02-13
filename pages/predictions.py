@@ -123,8 +123,8 @@ column2 = dbc.Col(
 #### Want to have shapely plot here
 column3 = dbc.Col(
     [
-        html.H2('Predicted Diameter:', className='mb-5'), 
-        html.Div(id='prediction-content', className='lead'),
+        html.H2('Predicted Diameter:', className='mb-5', style={'display':'inline'}), #need ###style="display:inline;"
+        html.Span(id='prediction-content', className='lead', style={'font-size':'36px'}), #need ###style="font-size:36px;"
         #html.Button('Explain Prediction', id='explain-btn'),
         #html.Div([html.Img(id='shap-img', height=200, width=1000)])
     ],
@@ -184,35 +184,8 @@ def predict(n_obs_used, albedo, classes, asteroids):
 
 # SHAP INPUT UNCOMMENT ONCE DONE GETTING RUN
 
-
-
-
-# @app.callback(
-#     Output('shap-img', 'src'),
-#     [Input('explain-btn','n_clicks')],
-#     [State('n_obs_used', 'value'), 
-#      State('albedo', 'value'),
-#      State('classes', 'value'),
-#      State('asteroid', 'value')],
-# )
-
-
-# #should arguments be alll the different columns for this as well???
-# def explain_png(n_clicks, loan_amnt, int_rate, term, fico_range_high, annual_inc, home_ownership):
-    
-#     #conver input to dataframe
-#     pred_df = df[df.full_name == asteroids]
-
-#     if n_obs_used is not None:
-#         pred_df = pred_df.iloc[:,'n_obs_used'] = n_obs_used #google how to overwrite single value in df
-#     if albedo is not None:
-#         pred_df = pred_df.iloc[:,'albedo'] = albedo
-#     if classes is not None:
-#         pred_df = pred_df.iloc[:,'classes'] = classes #change class in df to classes b4 train model in pipelin
-    
-
 #     # Get steps from pipeline and transform
-#     model = pipeline.named_steps['xgbclassifier']
+#model = pipeline.named_steps['xgbclassifier']
 #     encoder = pipeline.named_steps['ordinalencoder']
 #     df_processed = encoder.transform(df)
     
