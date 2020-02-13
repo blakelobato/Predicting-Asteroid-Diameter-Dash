@@ -118,6 +118,8 @@ column2 = dbc.Col(
         #html.Img(src='assets/galaxy.jpg', style={'width':'100%'}),
 
     ],
+
+
 )
 
 #### Want to have shapely plot here
